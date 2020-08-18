@@ -1,130 +1,126 @@
-Mobile_FlashCards
-A Flashcard app similar to Anki. Users can create decks of flash-cards and quiz themselves. A local device push-notification reminds the user to study daily at a specified time the user sets. Built to study React Native.
+<!—README  -->
 
-This project was bootstrapped with Create React Native App.
 
-This app was built for ios devices and was tested on an iphone 7 via the xcode simulator.
 
-Requirements
-This project requires Node v6 or later on your machine and yarn or npm v3, or v4. I used yarn to be on the safe side as npm v5 will create errors.
+—>  mobileflashcards is a React Native app for IOS which has the facilities for users to create decks, add cards and quiz themselves.
 
-To install yarn please see (https://yarnpkg.com/lang/en/docs/install/)
 
-The install steps below rely on xcode being installed on your machine. To view the app in another device or simulator please refer to the documentation Here.
+It uses React Native, Expo, Redux, & React Navigation.
 
-This project uses Expo to assit with device simulation to learn more about device simulation options with Expo please refer to the documentation Here.
+This app is the third of three projects required for [Udacity's React Nanodegree program](https://www.udacity.com/course/react-nanodegree--nd019).
 
-Application Functionality
-Decks List Screen
-The primary view, seen when the app loads, is a list of created decks which includes the name of each deck and the number of cards.
 
-Pressing on a deck in the list the app should route to an individual deck view.
+## Installation
 
-New Deck Screen
-The view includes:
+Clone the repository, change directories, and use npm or yarn to install the dependencies.
 
-a form for creating a new deck.
-an input for the title and a 'Create Deck' button.
-Pressing the button correctly creates the deck and routes the user to the Individual Deck view for the new deck.
+echo "# mobileflashcards" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/genedarocha/mobileflashcards.git
+git push -u origin master
 
-Deck View Screen
-The individual deck view includes:
 
-The deck title
-Number of cards in the deck
-Option to start a quiz for that deck
-Option to add a new question to the deck
-New Question Screen
-The New Question view includes:
+## Usage
 
-a form with fields for a question
-and answer, and a submit button.
-Submitting the form correctly adds the question to the deck.
+The project can be run with npm or yarn
 
-Quiz Screen
-The Quiz view starts with a question from the selected deck.
-The question is displayed, along with a button to show the answer.
-Pressing the 'Show Answer' button displays the answer.
-Buttons are included to allow the student to mark their guess as 'Correct' or 'Incorrect'
-The view displays the number of questions remaining.
-When the last question is answered, a score is displayed.
-When the score is displayed, buttons are displayed to either start the quiz over or go back to the Individual Deck view.
+- `yarn start` or ‘nom start’
 
-Install steps
-$ git clone https://github.com/NoraLou/Mobile-FlashCards
+This will open Expo Developer Tools in the browser.  You can then do one of the following.
 
-$ cd Mobile-FlashCards
+- Use your device to test:
 
-$ yarn
+    Scan the QR Code using the Expo Client app ([Expo Client for Android & iOS](https://expo.io/tools#client))  from an Android or iOS device.
+- Use an Android Emulator or iOS Simulator to run the app:
+    - [iOS Simulator Setup](https://docs.expo.io/versions/v33.0.0/introduction/installation/#ios-simulator)
+    - [Android Emulator Setup](https://docs.expo.io/versions/v33.0.0/introduction/installation/#android-emulator)
 
-$ yarn start
+[GitHub Repo](https://github.com/genedarocha/mobileflashcards/) |
 
-(to run in an xcode simulator on iphone ) 
 
-Notes Tested only on iOS simulator
+This site contains code notes for how I built project 3 for Udacity Mobile Flash Cards
 
-CRITERIA
-MEETS SPECIFICATIONS
-Is the application easy to install and start?
+Rubik Definitions for the project
 
-The application requires only yarn install and yarn start to install and launch. npm can be used in place of yarn.
+—> 1. Project Requirements
 
-Does the application include a README with clear installation and launch instructions?
+—> Overview
+The assignment is to build a mobile flashcard app from scratch using React Native.
 
-A README is included with the project. The README includes clear instructions for installing and launching the project.
+There is no starter code and below is the link to the rubric.
 
-Application Functionality
+- [Mobile Flashcard Project Specification](https://review.udacity.com/#!/rubrics/1021/view)
 
-CRITERIA
-MEETS SPECIFICATIONS
-Is the initial view a Deck List view?
+—> 1.2 Specific Requirements
+Here are the high-level requirements for this app.
 
-The primary view, seen when the app loads, is a list of created decks which includes the name of each deck and the number of cards.
+- Use [expo-cli] to build the project.
+- Allow users to create a deck which can hold an unlimited number of cards.
+- Allow users to add a card to a specific deck.
+- The front of the card should display the question.
+- The back of the card should display the answer.
+- Users should be able to quiz themselves on a specific deck and receive a score once they're done.
+- Users should receive a notification to remind themselves to study if they haven't already for that day.
 
-Does the Deck List view function correctly?
+—> 1.3 Views
 
-Pressing on a deck in the list should generate an animation, and the app should route to an individual deck view.
+Here are the views needed for this app.
 
-Does the Individual Deck view display the correct information?
+1. DeckList
+2. AddDeck
+3. Deck (Individual)
+4. AddCard
+5. Quiz
+   - Front (Question)
+   - Back (Answer)
+   - Results (Upon completion)
 
-The individual deck view includes (at a minimum):
+—>  1.3.1 DeckList View (Default)
 
-The deck title
-Number of cards in the deck
-Option to start a quiz for that deck
-Option to add a new question to the deck
-Does the Individual Deck view function correctly?
+- displays the title of each Deck
+- displays the number of cards in each deck
 
-Pressing the 'Start a Quiz' or 'Add Card' button properly routes to the correct views for those activities.
+—> 1.3.2 AddDeck View
 
-Does the New Question view function correctly?
+- An option to enter in the title for the new deck
+- An option to submit the new deck title
 
-The New Question view includes a form with fields for a question and answer, and a submit button.
+—>  1.3.3 Deck View
 
-Submitting the form correctly adds the question to the deck.
+- displays the title of the Deck
+- displays the number of cards in the deck
+- displays an option to start a quiz on this specific deck
+- An option to add a new question to the deck
 
-Does the Quiz View function correctly?
+—> 1.3.4 AddCard View
 
-The Quiz view starts with a question from the selected deck.
-The question is displayed, along with a button to show the answer.
-Pressing the 'Show Answer' button displays the answer.
-Buttons are included to allow the student to mark their guess as 'Correct' or 'Incorrect'
-The view displays the number of questions remaining.
-When the last question is answered, a score is displayed. This can be displayed as a percentage of correct answers or just the number of questions answered correctly.
-When the score is displayed, buttons are displayed to either start the quiz over or go back to the Individual Deck view.
-Both the 'Restart Quiz' and 'Back to Deck' buttons route correctly to their respective views.
-Does the New Deck view work correctly?
+- An option to enter in the question
+- An option to enter in the answer
+- An option to submit the new question
 
-The view includes a form for creating a new deck - which should just be an input for the title and a 'Create Deck' button.
+—>  1.3.5 Quiz View
 
-Pressing the button correctly creates the deck and routes the user to the Individual Deck view for the new deck.
+- displays a card question
+- an option to view the answer (flips the card)
+- a "Correct" button
+- an "Incorrect" button
+- the number of cards left in the quiz
+- Displays the percentage correct once the quiz is complete
 
-Does the user receive a notification at a particular time if they haven't studied that day?
+—>  1.4 Data
+App uses Expo's `AsyncStorage` to initialise and create and store the flashcards and decks as needed. The Redux code is not necessary but will be used. 
 
-Logic for notification has been implemented. Notifications are generated at a specific time if the user hasn't completed at least one quiz for that day.
+- Each deck creates a new key on the object.
+- Each deck has a `title` and a `questions` key.
+- `title` is the title for the specific deck
+- `questions` is an array of questions and answers for that deck.
 
-Does the app function correctly in either Android or iOS?
+—>  1.5 Helper Methods
+To manage your AsyncStorage database, you'll want to create four different helper methods.
 
-The app works correctly in either Android OR iOS devices (or emulator).
-
-Project README identifies which platform(s) have been tested.
+- `getDecks`: return all of the decks along with their titles, questions, and answers.
+- `getDeck`: take in a single id argument and return the deck associated with that id.
+- `saveDeckTitle`: take in a single title argument and add it to the decks.
+- `addCardToDeck`: take in two arguments, title and card, and will add the card to the list of questions for the deck with the associated title.
